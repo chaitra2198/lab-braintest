@@ -1,4 +1,5 @@
 package controller;
+import service.PersonalityCalculator;
 
 import java.io.IOException;
 
@@ -33,8 +34,11 @@ public class PersonalityViewController extends HttpServlet {
 		String options=request.getParameter("selectedOptions");
 		
 		System.out.println(options);
+		
+		PersonalityCalculator p = new PersonalityCalculator();
+		String message = p.findYourBrainType(options);
 				
-		/* 
+		 
 
 		request.setAttribute("message", message);
 		
@@ -53,8 +57,6 @@ public class PersonalityViewController extends HttpServlet {
 				rd.forward(request, response);
 			}
 		
-		}*/
+		}
 		}
 	}
-
-
